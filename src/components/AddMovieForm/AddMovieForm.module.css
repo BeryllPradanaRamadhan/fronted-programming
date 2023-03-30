@@ -1,0 +1,95 @@
+.container{
+    padding: 1rem;
+    text-align: center;
+}
+
+.AddMovieForm{
+    align-items: center;
+}
+
+.AddMovieForm__right{
+    padding: 1rem;
+}
+
+.title1{
+    text-align: center;
+    color: rgb(51, 88, 156);
+}
+
+.title{
+    text-align: center;
+}
+
+.AddMovieForm__image{
+    max-width: 100%;
+    height: auto;
+    border-radius: 25px;
+}
+
+.AddMovieForm__left{
+    text-align: left;
+}
+
+/* Medium Screen */
+
+@media (min-width:768px) {
+    .container{
+        max-width: 12000px;
+        margin: 2rem auto;
+    }
+
+    .AddMovieForm{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+    }
+    .AddMovieForm__left{
+        flex-basis: 60%;
+    }
+    .AddMovieForm__right{
+        flex-basis: 40%;
+    }
+}
+.inputtitle{
+    width: 100%;
+}
+.inputyear{
+    width: 100%;
+}
+
+.button{
+    padding: 0.8rem 2rem;
+    border: none;
+    border-radius: 10px;
+    background-color: blue;
+    color: #fff;
+    width: 100%;
+}
+
+/* Large Screen */
+@media (min-width:992px) {
+    .container{
+        max-width: 1200px;
+        margin: 2rem auto;
+    }
+    .AddMovieForm{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+    }
+    .AddMovieForm__left{
+        flex-basis: 60%;
+    }
+    .AddMovieForm__right{
+        flex-basis: 40%;
+    }
+}
+
+.inputtitle{
+    width: 100%;
+}
+.inputyear{
+    width: 100%;
+}
