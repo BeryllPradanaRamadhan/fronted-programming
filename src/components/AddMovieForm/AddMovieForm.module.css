@@ -1,106 +1,82 @@
-.container{
-    padding: 1rem;
-    text-align: center;
-}
-
-.AddMovieForm{
-    align-items: center;
-}
-
-.AddMovieForm__right{
+/* Small Screen */
+.container {
+    margin: 5rem 1rem;
     padding: 1rem;
 }
 
-.title1{
-    text-align: center;
-    padding: 1rem;
-    border: 1rem;
-    color: rgb(51, 88, 156);
-    margin-bottom: 1rem;
-    
-}
-
-.title{
-    border-radius: 25px;
+.from{
+    display: flex;
     flex-direction: column;
-    text-align: left;
 }
 
-.year{
-    text-align: left;
-    margin-top: 1rem;
+.form__left {
+    display: none;
 }
 
-.AddMovieForm__image{
-    max-width: 100%;
-    height: auto;
+.form__image {
+    max-height: 100;
     border-radius: 25px;
+    height: auto;
 }
 
-.AddMovieForm__left{
-    text-align: left;
+.form__group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1rem;
 }
 
-/* Medium Screen */
-
-@media (min-width:768px) {
-    .container{
-        max-width: 12000px;
-        margin: 2rem auto;
-    }
-
-    .AddMovieForm{
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        align-items: center;
-    }
-    .AddMovieForm__left{
-        flex-basis: 60%;
-    }
-    .AddMovieForm__right{
-        flex-basis: 40%;
-    }
-}
-.inputtitle{
-    width: 100%;
-}
-.inputyear{
-    width: 100%;
+.form__label {
+    margin-bottom: 1rem;
 }
 
-.button{
+.form__input {
+    padding: 1rem 0.5rem;
+    border: 1px solid #64678b;
+    border-radius: 10px;
+    outline: none;
+}
+
+.form__input:focus {
+    border: 1px solid #4361ee;
+}
+
+.form__button {
     padding: 0.8rem 2rem;
     border: none;
     border-radius: 10px;
-    background-color: blue;
+    background-color: #4361ee;
     color: #fff;
+    display: block;
+    margin: 0 auto;
     width: 100%;
 }
 
-/* Large Screen */
-@media (min-width:992px) {
-    .container{
-        max-width: 1200px;
-        margin: 2rem auto;
-    }
-    .AddMovieForm{
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        align-items: center;
-    }
-    .AddMovieForm__left{
-        flex-basis: 60%;
-    }
-    .AddMovieForm__right{
-        flex-basis: 40%;
-    }
+.form__title {
+    text-align: center;
+    color: #4361ee;
+    font-size: 2.4rem;
+    margin-bottom: 1rem;
 }
 
-.inputtitle{
-    width: 100%;
-}
-.inputyear{
-    width: 100%;
-}
+  /* Large Screen */
+  @media (min-width: 992px) {
+    .container {
+      max-width: 1200px;
+      margin: 5rem auto;
+    }
+  
+    .form {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+    }
+  
+    .form__left {
+      display: block;
+      flex-basis: 60%;
+    }
+  
+    .form__right {
+      flex-basis: 40%;
+    }
+  }

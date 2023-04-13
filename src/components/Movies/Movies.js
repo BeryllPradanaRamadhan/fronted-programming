@@ -1,14 +1,10 @@
 import Movie from "../Movie/Movie";
 import styles from "./Movies.module.css";
-//import data movies
-import data from "../utils/data";
-import { useState } from "react";
 import { nanoid } from "nanoid";
 
-function Movies() {
-    // Membuat variabe movies
-    const [movies, setMovies] = useState(data);
-
+function Movies(props) {
+// Destructing props
+  const { movies, setMovies} = props;
 
 //   membuat fungsi tambah film
 // di jalankan ketika tombol di clik
@@ -40,7 +36,9 @@ function tambahFilm() {
         </div>
         
         {/* Menambahkan event on Click */}
-        <button onClick={tambahFilm}>Tambah Film</button>
+       
+        <button className={styles.movies__button} onClick={tambahFilm}>Tambah Film</button>
+        
       </section>
     </div>
   );
