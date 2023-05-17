@@ -28,10 +28,10 @@ function AddMoviesForm(props) {
     e.preventDefault();
 
     // Jika Title kosong, maka set error title true
-    if (title == "") {
+    if (title === "") {
       setIsTitleError(true);
     } 
-    else if (date == "") {
+    else if (date === "") {
       setIsDateError(true);
     }
     
