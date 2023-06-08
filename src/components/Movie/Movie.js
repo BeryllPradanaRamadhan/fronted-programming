@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import StyledMovie from "./Movie.styled";
 
 // tangkap props
@@ -9,7 +10,7 @@ const { movie } = props;
       <StyledMovie>
     <div>
       <img
-        src={movie.poster}
+        src={movie.poster||`https://image.tmdb.org/t/p/w300/${movie.poster_path}`}
         alt=""
       />
       <h3>{movie.title}</h3>
