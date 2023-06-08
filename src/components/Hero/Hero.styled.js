@@ -1,47 +1,39 @@
-/* Small Screen */
-.container {
-  margin: 1rem;
-  padding: 1rem;
-}
+import styled from "styled-components";
 
-.hero {
+const StyledHero = styled.div`
+  margin: 0 auto;
+  padding: 1rem;
+
+
+section {
   display: flex;
   flex-direction: column;
   text-align: center;
 }
 
-.hero__left {
+div {
   margin-bottom: 1rem;
 }
 
-.hero__title {
+h2 {
   color: #4361ee;
   margin-bottom: 1rem;
   font-size: 2.44rem;
 }
 
-.hero__genre {
+h3 {
   color: #b5179e;
   margin-bottom: 1rem;
   font-size: 1.59rem;
 }
 
-.hero__description {
+p {
   color: #64748b;
   margin-bottom: 1rem;
 }
 
-.hero__button {
-  padding: 0.8rem 2rem;
-  border: none;
-  border-radius: 10px;
-  background-color: #4361ee;
-  color: #fff;
-  margin-right: 2rem;
-  margin-left: 0rem;
-}
 
-.hero__image {
+img {
   max-width: 100%;
   height: auto;
   border-radius: 25px;
@@ -49,23 +41,18 @@
 
 /* Medium Screen */
 @media (min-width: 768px) {
-  /*
-   * Nothing TODO Here.
-   * We dont change style Hero. 
-   */
+
 }
 
 /* Large Screen */
 @media (min-width: 992px) {
-  .container {
     text-align: left;
     max-width: 1200px;
-    margin: 3rem auto;
-    
+    margin: 3em auto;
   }
 
-  .hero {
-    margin: 0 auto;
+  section {
+    padding: 1rem;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -73,17 +60,13 @@
     text-align: left;
   }
 
-  .hero__left {
-    flex-basis: 60%;
-    align-items: center;
-    justify-content: space-between ;
-    display: 
+
+  div {
+    flex-basis: 30%;
+    justify-content: end;
+    align-items: end;
   }
 
-  .hero__right {
-    flex-basis: 60%;
-    justify-content: end;
-    align-items: center;
-    display:flex
-  }
-}
+`;
+
+export default StyledHero;

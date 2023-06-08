@@ -22,11 +22,15 @@
 .form__group {
     display: flex;
     flex-direction: column;
-    margin-bottom: 1rem;
+    
 }
 
 .form__label {
-    margin-bottom: 1rem;
+  margin: 0.5rem;
+  text-align: start;
+  display: flex;
+  max-width: 100%;
+  
 }
 
 .form__input {
@@ -34,6 +38,7 @@
     border: 1px solid #64678b;
     border-radius: 10px;
     outline: none;
+    margin-bottom: 1rem;
 }
 
 .form__input:focus {
@@ -62,21 +67,22 @@
   @media (min-width: 992px) {
     .container {
       max-width: 1200px;
-      margin: 5rem auto;
+      margin: 4rem auto;
+
     }
   
     .form {
       display: flex;
-      flex-direction: row;
       align-items: center;
+      justify-content: space-between;
     }
   
     .form__left {
       display: block;
-      flex-basis: 60%;
+      flex-basis: 50%;
     }
   
     .form__right {
-      flex-basis: 40%;
+      flex-basis:40%;
     }
   }

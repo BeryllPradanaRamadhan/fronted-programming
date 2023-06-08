@@ -2,6 +2,7 @@ import { useState } from "react";
 import styles from "./AddMovieForm.module.css";
 import { nanoid } from "nanoid";
 import Alert from "../Alert/Alert";
+import Button from "../ui/button/Button";
 
 function AddMoviesForm(props) {
   // desctrucing props
@@ -92,8 +93,24 @@ function AddMoviesForm(props) {
               />
               {isDateError && <Alert>Date Wajib Isi</Alert>}
             </div>
+           <div className={styles.form__group}>
+              <label htmlFor="Gambar" className={styles.form__label}>
+                Link Gambar
+              </label>
+              <input type="text" 
+              className={styles.form__input}/>
+            </div>
+            <div className={styles.form__group}>
+              <label htmlFor="" className={styles.form__label}>Type Movie</label>
+              <select className={styles.form__input} name="" id="">
+                <option value="">Action</option>
+                <option value="">Horror</option>
+                <option value="">Comedy</option>
+                <option value="">Dll</option>
+              </select>
+            </div>
             <div>
-              <button className={styles.form__button}>Add Movie</button>
+              <Button variant="primmary" full>Watch</Button>
             </div>
           </form>
         </div>
