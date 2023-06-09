@@ -30,13 +30,11 @@ function Hero() {
     setMovie(response.data)
   }
 
-  
-
   return (
     <StyledHero>
       <div>
         <section>
-          <div>
+          <div className="hero__left">
             <h2>{movie.title}</h2>
             <h3>{genres}</h3>
             <p>{movie.overview}</p>
@@ -44,7 +42,7 @@ function Hero() {
               watch
             </Button>
           </div>
-          <div>
+          <div className="hero__right">
             <img src={`https://image.tmdb.org/t/p/w500/${movie.backdrop_path}`} alt={movie.Title} />
           </div>
         </section>

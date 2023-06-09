@@ -88,22 +88,26 @@ function AddMoviesForm(props) {
                 onChange={handleDate}
                 id="date"
                 className={styles.form__input}
-                type="text"
+                type="number"
                 value={date}
               />
               {isDateError && <Alert>Date Wajib Isi</Alert>}
             </div>
            <div className={styles.form__group}>
-              <label htmlFor="Gambar" className={styles.form__label}>
-                Link Gambar
+              <label htmlFor="poster" className={styles.form__label}>
+               Poster
               </label>
-              <input type="text" 
+              <input 
+              id="poster"
+              type="text" 
               className={styles.form__input}/>
             </div>
             <div className={styles.form__group}>
               <label htmlFor="" className={styles.form__label}>Type Movie</label>
               <select className={styles.form__input} name="" id="">
-                <option value="">Action</option>
+              <option value="">Pilih</option>
+              <option value="">Action</option>
+                <option value="">Thiler</option>
                 <option value="">Horror</option>
                 <option value="">Comedy</option>
                 <option value="">Dll</option>

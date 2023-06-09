@@ -22,10 +22,10 @@ function Navbar() {
                     <Link to="/movie/popular"> Popular </Link>
                         </li>
                     <li>
-                    <Link to="/movie/now"> Now Playing </Link>
+                    <Link to="/movie/now-playing"> Now Playing </Link>
                         </li>
                     <li>
-                    <Link to="/movie/popular"> Top Rated </Link>
+                    <Link to="/movie/top-rated"> Top Rated </Link>
                         </li>
                 </ul>
             </div>

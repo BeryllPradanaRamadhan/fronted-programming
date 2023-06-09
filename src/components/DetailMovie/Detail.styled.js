@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-const StyledHero = styled.div`
+const StyledDetail = styled.div`
   margin: 0 auto;
   padding: 1rem;
 
@@ -48,7 +48,7 @@ img {
 @media (min-width: 992px) {
     text-align: left;
     max-width: 1200px;
-    margin: 3rem auto;
+    margin: 3em auto;
   }
 
   section {
@@ -61,16 +61,12 @@ img {
   }
 
 
-  .hero__left {
-    flex-basis: 50%;
-    margin: 0 2rem;
-  }
-
-  .hero__right {
-    flex-basis: 50%;
-    margin: 0 2rem;
+  div {
+    flex-basis: 30%;
+    justify-content: end;
+    align-items: end;
   }
 
 `;
 
-export default StyledHero;
+export default StyledDetail;
