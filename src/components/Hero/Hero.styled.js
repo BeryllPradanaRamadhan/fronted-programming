@@ -1,8 +1,8 @@
 import styled from "styled-components";
 
 const StyledHero = styled.div`
-  margin: 0 auto;
-  padding: 1rem;
+  margin: 0rem auto;
+  
 
 
 section {
@@ -52,7 +52,7 @@ img {
   }
 
   section {
-    padding: 1rem;
+    padding: 0rem;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -62,13 +62,13 @@ img {
 
 
   .hero__left {
-    flex-basis: 50%;
-    margin: 0 2rem;
+    flex-basis: 60%;
+    margin: 0 1rem;
   }
 
   .hero__right {
-    flex-basis: 50%;
-    margin: 0 2rem;
+    flex-basis: 40%;
+    margin: 0 1rem;
   }
 
 `;

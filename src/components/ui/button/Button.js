@@ -37,8 +37,4 @@ ${(props) => props.full && css`
 `}
 `
 
-
-
-
-
 export default Button;

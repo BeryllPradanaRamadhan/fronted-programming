@@ -1,4 +1,5 @@
 import { useParams } from "react-router-dom";
+import DetailMovie from "../../components/DetailMovie/DetailMovie";
 
 function Detail () {
     const params = useParams();
@@ -6,6 +7,7 @@ function Detail () {
     return (
         <>
         <h2> Detail Movie: {params.id}</h2>
+        <DetailMovie />
         </>
     );
 }
