@@ -2,27 +2,24 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import Hero from "../../components/Hero/Hero";
 import Movies from "../../components/Movies/Movies";
+import ENDPOINT from "../../components/utils/constants/endpoints";
 
 function TopRatedMovie() {
-  const API_KEY = process.env.REACT_APP_API_KEY;
-  const URL = `https://api.themoviedb.org/3/movie/top_rated?api_key=${API_KEY}`;
-
   const [TopRated, setTopRated] = useState([]);
 
   async function TopRatedMovie() {
-    const response = await axios(URL);
+    const response = await axios(ENDPOINT.TOP_RATED);
     setTopRated(response.data.results);
   }
 
   useEffect(() => {
     TopRatedMovie();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (
     <>
       <Hero />
-      <Movies movies={TopRated} />
+      <Movies title="Top Rated" movies={TopRated} />
     </>
   );
 }

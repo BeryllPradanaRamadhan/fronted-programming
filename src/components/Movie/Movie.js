@@ -1,9 +1,7 @@
 import { Link } from "react-router-dom";
 import StyledMovie from "./Movie.styled";
 
-// tangkap props
 function Movie(props) {
-//   Destructing object props
 const { movie } = props;
 
     return (

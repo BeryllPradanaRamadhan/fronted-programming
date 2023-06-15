@@ -12,7 +12,7 @@ function Main() {
   return (
     <main>
       <Hero />
-      <Movies movies={movies} setMovies={setMovies} />
+      <Movies title="MOVIES" movies={movies} setMovies={setMovies} />
       <AddMoviesForm movies={movies} setMovies={setMovies} />
     </main>
   );
