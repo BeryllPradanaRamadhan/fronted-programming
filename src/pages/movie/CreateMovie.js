@@ -1,11 +1,11 @@
-function CreateMovie() {
-    return (
-        <>
-          
-            <h2>Create Movie</h2>
-            
-        </>
-    );
+import AddMoviesForm from "../../components/AddMovieForm/AddMovieForm";
+
+function CreateMovie({ movies, setMovies }) {
+  return (
+    <>
+      <AddMoviesForm movies={movies} setMovies={setMovies} />
+    </>
+  );
 }
 
 export default CreateMovie;

@@ -3,52 +3,77 @@ import styles from "./AddMovieForm.module.css";
 import { nanoid } from "nanoid";
 import Alert from "../Alert/Alert";
 import Button from "../ui/button/Button";
+import { useNavigate } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { addMovie } from "../../features/movieSlice";
 
-function AddMoviesForm(props) {
-  // desctrucing props
-  const { movies, setMovies } = props;
+function AddMovieForm() {
+  const dispatch = useDispatch();
+  const navigation = useNavigate();
 
-  // Membuat state title
-  const [title, setTitle] = useState("");
-  //   Membuat state data
-  const [date, setDate] = useState("");
+  const initialValues = {
+    title: "",
+    date: "",
+    poster: "",
+    type: "",
+  };
 
-  // Membuat state  title dan data error/empty
+  const [values, setValues] = useState(initialValues);
+
   const [isTitleError, setIsTitleError] = useState(false);
   const [isDateError, setIsDateError] = useState(false);
+  const [isPosterError, setIsPosterError] = useState(false);
+  const [isTypeError, setIsTypeError] = useState(false);
 
-  // Membuat fungsi HandTitle
-  function handleTitle(e) {
-    setTitle(e.target.value);
-  }
-  function handleDate(e) {
-    setDate(e.target.value);
-  }
-  // Handle form ketika disubmit
-  function handleSumbit(e) {
-    e.preventDefault();
+  const handleInputChange = (e) => {
+    const { name, value } = e.target;
 
-    // Jika Title kosong, maka set error title true
+    setValues({
+      ...values,
+      [name]: value,
+    });
+  };
+
+  const validate = () => {
     if (title === "") {
-      setIsTitleError(true);
-    } 
-    else if (date === "") {
+      setIsTitleError(false);
+      return false;
+    } else if (date === "") {
+      setIsTitleError(false);
       setIsDateError(true);
+      return false;
+    } else if (poster === "") {
+      setIsDateError(false);
+      isPosterError(true);
+      return false;
+    } else if (type === "") {
+      setIsPosterError(false);
+      setIsTypeError(true);
+      return false;
+    } else {
+      return true;
     }
-    
-    else {
-      // Siapkan movie yang ingin di input
-      const movie = {
-        id: nanoid(),
-        title: title,
-        year: date,
-        type: "Movie",
-        poster: "https://picsum.photos/300/400",
-      };
+  };
 
-      setMovies([...movies, movie]);
-    }
-  }
+  const submitMovie = () => {
+    const movie = {
+      id: nanoid(),
+      title: title,
+      year: date,
+      poster: poster,
+      type: type,
+    };
+
+    dispatch(addMovie(movie));
+    navigation("/");
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    validate() && submitMovie();
+  };
+
+  const { title, date, poster, type } = values;
 
   return (
     <div className={styles.container}>
@@ -62,59 +87,74 @@ function AddMoviesForm(props) {
         </div>
         <div className={styles.form__right}>
           <h2 className={styles.form__title}>Add Movie Form</h2>
-          <form onSubmit={handleSumbit}>
-            <div className={styles.form__group}>
+          <form onSubmit={handleSubmit}>
+            <div className={styles.form__content}>
               <label htmlFor="title" className={styles.form__label}>
                 Title
               </label>
               <input
-                onChange={handleTitle}
                 id="title"
-                className={styles.form__input}
+                name="title"
                 type="text"
+                className={styles.form__input}
+                onChange={handleInputChange}
                 value={title}
               />
-              {/* 
-              Jika error title true: muncul error
-              Jika tidak, munculkan string kosong
-              */}
-              {isTitleError && <Alert>Title Wajib Isi</Alert>}
+              {isTitleError && <Alert>Title wajib diisi</Alert>}
             </div>
-            <div className={styles.form__group}>
+            <div className={styles.form__content}>
               <label htmlFor="date" className={styles.form__label}>
                 Date
               </label>
               <input
-                onChange={handleDate}
                 id="date"
+                name="date"
+                type="text"
                 className={styles.form__input}
-                type="number"
+                onChange={handleInputChange}
                 value={date}
               />
-              {isDateError && <Alert>Date Wajib Isi</Alert>}
+              {isDateError && <Alert>Date wajib diisi</Alert>}
             </div>
-           <div className={styles.form__group}>
+            <div className={styles.form__content}>
               <label htmlFor="poster" className={styles.form__label}>
-               Poster
+                Poster
               </label>
-              <input 
-              id="poster"
-              type="text" 
-              className={styles.form__input}/>
+              <input
+                id="poster"
+                name="poster"
+                type="text"
+                className={styles.form__input}
+                onChange={handleInputChange}
+                value={poster}
+              />
+              {isPosterError && <Alert>Poster wajib diisi</Alert>}
             </div>
-            <div className={styles.form__group}>
-              <label htmlFor="" className={styles.form__label}>Type Movie</label>
-              <select className={styles.form__input} name="" id="">
-              <option value="">Pilih</option>
-              <option value="">Action</option>
-                <option value="">Thiler</option>
-                <option value="">Horror</option>
-                <option value="">Comedy</option>
-                <option value="">Dll</option>
+            <div className={styles.form__content}>
+              <label htmlFor="type" className={styles.form__label}>
+                Type
+              </label>
+              <select
+                id="type"
+                name="type"
+                className={styles.form__input}
+                onChange={handleInputChange}
+                value={type}
+              >
+                <option value="">Pilih</option>
+                <option value="Action">Action</option>
+                <option value="thriller">Thriller</option>
+                <option value="drama">Drama</option>
+                <option value="romance">Romance</option>
+                <option value="comedy">Comedy</option>
+                <option value="mystery">Mystery</option>
               </select>
+              {isTypeError && <Alert>Type wajib diisi</Alert>}
             </div>
             <div>
-              <Button variant="primmary" full>Watch</Button>
+              <Button variant="primary" full>
+                Add Movie
+              </Button>
             </div>
           </form>
         </div>
@@ -123,4 +163,4 @@ function AddMoviesForm(props) {
   );
 }
 
-export default AddMoviesForm;
+export default AddMovieForm;

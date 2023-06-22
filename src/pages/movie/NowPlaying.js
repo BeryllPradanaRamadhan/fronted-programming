@@ -1,11 +1,13 @@
 import axios from "axios";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import Hero from "../../components/Hero/Hero";
 import Movies from "../../components/Movies/Movies";
 import ENDPOINT from "../../components/utils/constants/endpoints";
+import { useDispatch } from "react-redux";
+import { updateMovies } from "../../features/movieSlice";
 
 function NowPlayingMovie() {
-  const [movies, setMovies] = useState([]);
+  const dispatch = useDispatch();
 
   useEffect(() => {
     NowPlayingMovie();
@@ -13,13 +15,13 @@ function NowPlayingMovie() {
 
   async function NowPlayingMovie() {
     const response = await axios(ENDPOINT.NOW_PLAYING);
-    setMovies(response.data.results);
+    dispatch(updateMovies(response.data.results));
   }
 
   return (
     <>
       <Hero />
-      <Movies title="Now Playing" movies={movies} />
+      <Movies title="Now Playing" />
     </>
   );
 }

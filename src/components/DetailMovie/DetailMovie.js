@@ -9,7 +9,7 @@ const DetailMovie = () => {
   const { id } = useParams();
   const [movie, setMovie] = useState("");
   const genres = movie && movie.genres.map((genre) => genre.name).join(", ");
-  const idTrailer = movie && movie.videos.results[0].key
+  const idTrailer = movie && movie.videos.results[0].key;
   const trailer = movie && `https://www.youtube.com/watch?v=${idTrailer}`;
 
   useEffect(() => {
@@ -25,16 +25,20 @@ const DetailMovie = () => {
 
   return (
     <StyledDetailMovie>
-   <div className="poster">
-    <img src={`https://image.tmdb.org/t/p/w300/${movie.poster_path}`} 
-    alt={movie.title} />
-   </div>
-   <div className="info">
-    <h2>{movie.title}</h2>
-    <h3>{genres}</h3>
-    <p>{movie.overview}</p>
-    <Button as="a" href={trailer}>Wacth</Button>
-   </div>
+      <div className="poster">
+        <img
+          src={`https://image.tmdb.org/t/p/w300/${movie.poster_path}`}
+          alt={movie.title}
+        />
+      </div>
+      <div className="info">
+        <h2>{movie.title}</h2>
+        <h3>{genres}</h3>
+        <p>{movie.overview}</p>
+        <Button as="a" href={trailer}>
+          Wacth
+        </Button>
+      </div>
     </StyledDetailMovie>
   );
 };
