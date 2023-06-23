@@ -1,0 +1,91 @@
+/* Small Screen */
+.container {
+  margin: 1rem;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+}
+
+.form__left {
+  display: none;
+}
+
+.form__image {
+  max-width: 100%;
+  height: auto;
+  border-radius: 25px;
+}
+
+.form__right {
+  margin-bottom: 5rem;
+}
+
+.form__title {
+  font-size: 2.44rem;
+  color: #4361ee;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.form__content {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1rem;
+}
+
+.form__label {
+  color: #64748b;
+  margin-bottom: 0.5rem;
+}
+
+.form__input {
+  padding: 0.8rem;
+  border: 1px solid #354788;
+  border-radius: 10px;
+  outline-color: #64748b;
+}
+
+.form__button {
+  width: 100%;
+  padding: 0.8rem;
+  border: none;
+  border-radius: 10px;
+  background-color: #4361ee;
+  color: #fff;
+}
+
+.form__button:hover {
+  background-color: #64748b;
+  cursor: pointer;
+}
+
+/* Medium Screen */
+@media (min-width: 768px) {
+}
+
+/* Large Screen */
+@media (min-width: 992px) {
+  .container {
+    max-width: 1200px;
+    margin: 4rem auto;
+  }
+
+  .form {
+    margin: 2rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .form__left {
+    flex-basis: 60%;
+    display: block;
+  }
+
+  .form__right {
+    flex-basis: 40%;
+    margin: auto;
+  }
+}
