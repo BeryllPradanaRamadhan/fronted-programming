@@ -41,7 +41,7 @@ function Hero() {
               variant="primary"
               size="md"
             >
-              watch
+              Watch Trailer
             </Button>
           </div>
           <div className="hero__right">
